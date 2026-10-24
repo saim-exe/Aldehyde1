@@ -1,0 +1,16 @@
+{
+  "name": "brand-assistant",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A branded AI chat assistant for GitHub Pages, with a secure Cloudflare Worker proxy.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test worker/worker.test.js scripts/inject-config.test.js",
+    "test:browser": "node tests/browser-smoke.mjs",
+    "serve": "python3 -m http.server 8080 --directory site",
+    "worker:dev": "cd worker && npx wrangler dev"
+  }
+}
